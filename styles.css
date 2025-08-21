@@ -1,0 +1,148 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Federant&display=swap');
+*{
+   font-family: "Federant", serif;
+   font-weight: 400;
+   font-style: normal;
+}
+/* Custom scrollbar for the dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1f2937; /* bg-gray-800 */
+}
+::-webkit-scrollbar-thumb {
+  background: #4b5563; /* bg-gray-600 */
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280; /* bg-gray-500 */
+}
+
+/* Glowing button style */
+.btn-glow {
+  position: relative;
+  background: radial-gradient(ellipse at center, rgba(14, 165, 233, 0.15) 0%, transparent 80%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: all 0.2s ease-in-out;
+}
+.btn-glow .text-glow {
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.6), 0 0 10px rgba(14, 165, 233, 0.6);
+}
+.btn-glow:hover {
+  background: radial-gradient(ellipse at center, rgba(14, 165, 233, 0.25) 0%, transparent 70%);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(14, 165, 233, 0.2);
+}
+
+/* Date/time picker styling for dark theme */
+input[type="datetime-local"] {
+  color-scheme: dark;
+}
+
+/* Animation delays */
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+/* Experience timeline styling */
+.timeline-container {
+  position: relative;
+}
+
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 18px;
+  height: 100%;
+  width: 2px;
+  background: #4b5563;
+  z-index: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 12px;
+  top: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #0ea5e9;
+  border: 2px solid #0c4a6e;
+  z-index: 1;
+}
+
+/* Project card hover effects */
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.project-card .project-overlay {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+/* Skill card hover effects */
+.skill-card {
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-3px);
+  border-color: #0ea5e9;
+}
+
+/* Active navigation link */
+.nav-active {
+  color: #38bdf8;
+  position: relative;
+}
+
+.nav-active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #38bdf8;
+  border-radius: 2px;
+}
+
+/* Modal animations */
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: translate(-50%, -48%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+.modal-content {
+  animation: modalFadeIn 0.3s ease-out forwards;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .timeline-container::before {
+    left: 12px;
+  }
+  
+  .timeline-dot {
+    left: 6px;
+  }
+}
